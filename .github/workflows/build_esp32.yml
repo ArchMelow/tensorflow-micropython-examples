@@ -3,7 +3,6 @@ name: ESP32
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule
 # add something
 on:
-  push:
   pull_request:
     paths:
       - ".github/workflows/build_esp32.yml"
@@ -38,66 +37,4 @@ jobs:
           name: microlite-esp32-firmware
           path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/esp32/build-MICROLITE/firmware.bin
 
-      # - name: Build with psram support and 16MB Flash firmware
-      #   run: |
-      #     source ./esp-idf/export.sh
-
-      #     echo "cd ./boards/esp32/MICROLITE_SPIRAM_16M"
-      #     cd ./boards/esp32/MICROLITE_SPIRAM_16M
-
-      #     echo "Building MICROLITE_SPIRAM_16M"
-      #     rm -rf build
-      #     idf.py clean build
-
-      #     ../../../micropython-modules/microlite/assemble-unified-image-esp.sh \
-      #     ../../../micropython/ports/esp32
-
-      # - name: Archive ESP32-MICROLITE-SPIRAM-16M firmware
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: microlite-spiram-16m-esp32-firmware
-      #     path: |
-      #       boards/esp32/MICROLITE_SPIRAM_16M/build/firmware.bin
-
-      # - name: Build with psram support
-      #   run: |
-      #     source ./esp-idf/export.sh
-
-      #     echo "cd ./boards/esp32/MICROLITE_SPIRAM"
-      #     cd ./boards/esp32/MICROLITE_SPIRAM
-
-      #     echo "Building MICROLITE_SPIRAM"
-      #     rm -rf build
-      #     idf.py clean build
-
-      #     ../../../micropython-modules/microlite/assemble-unified-image-esp.sh \
-      #     ../../../micropython/ports/esp32
-
-      # - name: Archive ESP32-MICROLITE-SPIRAM firmware
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: microlite-spiram-esp32-firmware
-      #     path: |
-      #       boards/esp32/MICROLITE_SPIRAM/build/firmware.bin
-
-      # - name: Build MICROLITE_SPIRAM_CAM
-      #   run: |
-
-      #     source ./esp-idf/export.sh
-
-      #     echo "cd ./boards/esp32/MICROLITE_SPIRAM_CAM"
-      #     cd ./boards/esp32/MICROLITE_SPIRAM_CAM
-
-      #     echo "Building MICROLITE_SPIRAM_CAM"
-      #     rm -rf builds
-      #     idf.py clean build
-
-      #     ../../../micropython-modules/microlite/assemble-unified-image-esp.sh \
-      #     ../../../micropython/ports/esp32
-
-      # - name: Archive ESP32-MICROLITE_SPIRAM_CAM firmware
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: microlite-spiram-cam-esp32-firmware
-      #     path: |
-      #       boards/esp32/MICROLITE_SPIRAM_CAM/build/firmware.bin
+    
